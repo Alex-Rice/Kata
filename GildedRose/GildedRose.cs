@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GildedRose.Managers;
 
-namespace Kata
+namespace GildedRose
 {
     class GildedRose
     {

@@ -1,4 +1,4 @@
-﻿namespace Kata
+﻿namespace GildedRose.Managers
 {
     class Sulfuras : ItemManager
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Kata
+namespace GildedRose.Tests
 {
     [TestFixture()]
     public class GildedRoseTest

@@ -5,7 +5,7 @@ using ApprovalTests;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 
-namespace Kata
+namespace GildedRose.Tests
 {
     [TestFixture]
     [UseReporter(typeof(NUnitReporter))]

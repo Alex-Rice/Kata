@@ -1,4 +1,4 @@
-﻿namespace Kata
+﻿namespace GildedRose.Managers
 {
     class ItemManager
     {
@@ -9,6 +9,9 @@
             {
                 case "Sulfuras, Hand of Ragnaros":
                     ret = new Sulfuras {Item = item};
+                    break;
+                case "Aged Brie":
+                    ret = new AgedBrie {Item = item};
                     break;
                 default:
                     ret = new ItemManager {Item = item};

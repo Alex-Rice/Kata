@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Kata
+namespace GildedRose
 {
     class Program
     {
