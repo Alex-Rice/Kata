@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AgedBrie.cs" />
+    <Compile Include="Managers\Ticket.cs" />
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="Tests\GildedRoseTest.cs" />

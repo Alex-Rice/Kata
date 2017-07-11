@@ -86,6 +86,15 @@
                     }
                 }
             }
+
+            if (Item.Quality < 0)
+            {
+                Item.Quality = 0;
+            }
+            if (Item.Quality > 50)
+            {
+                Item.Quality = 50;
+            }
         }
     }
 }
