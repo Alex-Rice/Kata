@@ -16,6 +16,7 @@
             }
             return ret;
         }
+
         public Item Item { get; set; }
 
         public virtual void Update()
@@ -24,10 +25,7 @@
             {
                 if (Item.Quality > 0)
                 {
-                    if (Item.Name != "Sulfuras, Hand of Ragnaros")
-                    {
-                        Item.Quality = Item.Quality - 1;
-                    }
+                    Item.Quality = Item.Quality - 1;
                 }
             }
             else
@@ -57,10 +55,9 @@
                 }
             }
 
-            if (Item.Name != "Sulfuras, Hand of Ragnaros")
-            {
-                Item.SellIn = Item.SellIn - 1;
-            }
+
+            Item.SellIn = Item.SellIn - 1;
+
 
             if (Item.SellIn < 0)
             {
@@ -70,10 +67,7 @@
                     {
                         if (Item.Quality > 0)
                         {
-                            if (Item.Name != "Sulfuras, Hand of Ragnaros")
-                            {
-                                Item.Quality = Item.Quality - 1;
-                            }
+                            Item.Quality = Item.Quality - 1;
                         }
                     }
                     else
