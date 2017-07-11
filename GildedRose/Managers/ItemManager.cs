@@ -8,20 +8,20 @@
             switch (item.Name)
             {
                 case "Sulfuras, Hand of Ragnaros":
-                    ret = new Sulfuras {Item = item,Bounded = false};
+                    ret = new Sulfuras {Item = item};
                     break;
                 case "Aged Brie":
-                    ret = new AgedBrie {Item = item,Bounded = true};
+                    ret = new AgedBrie {Item = item};
                     break;
                 default:
-                    ret = new ItemManager {Item = item,Bounded = true};
+                    ret = new ItemManager {Item = item};
                     break;
             }
             return ret;
         }
 
         public Item Item { get; set; }
-        public bool Bounded { get; set; }
+        protected bool bounded = true;
 
         protected virtual void Update()
         {
@@ -75,7 +75,7 @@
 
         private void CheckBounds()
         {
-            if (Bounded)
+            if (bounded)
             {
                 if (Item.Quality < 0)
                 {
