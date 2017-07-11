@@ -2,7 +2,7 @@
 {
     class Sulfuras : ItemManager
     {
-        public override void Update()
+        protected override void Update()
         {
             //Do Nothing
         }

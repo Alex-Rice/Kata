@@ -19,7 +19,7 @@ namespace GildedRose
         {
             foreach (var im in Managers)
             {
-                im.Update();
+                im.UpdateAndCheckBounds();
             }
         }
     }

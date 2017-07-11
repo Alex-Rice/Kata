@@ -8,21 +8,22 @@
             switch (item.Name)
             {
                 case "Sulfuras, Hand of Ragnaros":
-                    ret = new Sulfuras {Item = item};
+                    ret = new Sulfuras {Item = item,Bounded = false};
                     break;
                 case "Aged Brie":
-                    ret = new AgedBrie {Item = item};
+                    ret = new AgedBrie {Item = item,Bounded = true};
                     break;
                 default:
-                    ret = new ItemManager {Item = item};
+                    ret = new ItemManager {Item = item,Bounded = true};
                     break;
             }
             return ret;
         }
 
         public Item Item { get; set; }
+        public bool Bounded { get; set; }
 
-        public virtual void Update()
+        protected virtual void Update()
         {
             if (Item.Name != "Aged Brie" && Item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -69,14 +70,28 @@
                 }
             }
 
-            if (Item.Quality < 0)
+            
+        }
+
+        private void CheckBounds()
+        {
+            if (Bounded)
             {
-                Item.Quality = 0;
+                if (Item.Quality < 0)
+                {
+                    Item.Quality = 0;
+                }
+                if (Item.Quality > 50)
+                {
+                    Item.Quality = 50;
+                }
             }
-            if (Item.Quality > 50)
-            {
-                Item.Quality = 50;
-            }
+        }
+
+        public void UpdateAndCheckBounds()
+        {
+            Update();
+            CheckBounds();
         }
     }
 }
