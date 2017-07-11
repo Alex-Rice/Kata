@@ -45,7 +45,7 @@
         public Item Item { get; set; }
         public bool Bounded { get; set; } = true;
 
-        protected virtual void Update()
+        public virtual void Update()
         {
             Item.Quality = Item.Quality - 1;
 

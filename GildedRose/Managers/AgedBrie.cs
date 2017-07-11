@@ -4,7 +4,7 @@ namespace GildedRose.Managers
 {
     class AgedBrie : ItemManager
     {
-        protected override void Update()
+        public override void Update()
         {
             Item.Quality += 1;
             Item.SellIn -= 1;

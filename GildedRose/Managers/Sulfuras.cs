@@ -9,7 +9,7 @@ namespace GildedRose.Managers
             Bounded = false;
         }
 
-        protected override void Update()
+        public override void Update()
         {
             //Do Nothing
         }

@@ -9,7 +9,7 @@ namespace GildedRose.Managers
 {
     class Ticket : ItemManager
     {
-        protected override void Update()
+        public override void Update()
         {
             Item.SellIn -= 1;
             if (Item.SellIn < 0)

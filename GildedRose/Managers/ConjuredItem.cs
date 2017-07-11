@@ -8,15 +8,20 @@ namespace GildedRose.Managers
 {
     class ConjuredItem : ItemManager
     {
+        private ItemManager BaseManager;
         public ConjuredItem(ItemManager baseManager)
         {
             Item = baseManager.Item;
             Bounded = baseManager.Bounded;
+            BaseManager = baseManager;
         }
 
-        protected override void Update()
+        public override void Update()
         {
-            base.Update();
+            var qualityBefore = Item.Quality;
+            BaseManager.Update();
+            var qualityAfter = Item.Quality;
+            Item.Quality = qualityBefore + (qualityAfter - qualityBefore) * 2;
         }
     }
 }
