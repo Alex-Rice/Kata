@@ -25,7 +25,7 @@
 
         protected virtual void Update()
         {
-            if (Item.Name != "Aged Brie" && Item.Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (Item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 Item.Quality = Item.Quality - 1;
             }
@@ -53,24 +53,15 @@
 
             if (Item.SellIn < 0)
             {
-                if (Item.Name != "Aged Brie")
+                if (Item.Name != "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (Item.Name != "Backstage passes to a TAFKAL80ETC concert")
-                    {
-                        Item.Quality = Item.Quality - 1;
-                    }
-                    else
-                    {
-                        Item.Quality = Item.Quality - Item.Quality;
-                    }
+                    Item.Quality = Item.Quality - 1;
                 }
                 else
                 {
-                    Item.Quality = Item.Quality + 1;
+                    Item.Quality = Item.Quality - Item.Quality;
                 }
             }
-
-            
         }
 
         private void CheckBounds()
