@@ -12,7 +12,7 @@ namespace GildedRose
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
-            Managers = Items.Select(ItemManager.Factory);
+            Managers = Items.Select(ItemManagerFactory.Factory);
         }
 
         public void UpdateQuality()

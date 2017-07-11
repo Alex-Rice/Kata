@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Managers\AgedBrie.cs" />
     <Compile Include="Managers\ConjuredItem.cs" />
+    <Compile Include="Managers\ItemManagerFactory.cs" />
     <Compile Include="Managers\Ticket.cs" />
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="GildedRose.cs" />
