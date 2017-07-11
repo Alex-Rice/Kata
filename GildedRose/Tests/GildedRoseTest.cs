@@ -133,5 +133,47 @@ namespace GildedRose.Tests
             Assert.AreEqual(13,Items[2].Quality);
             Assert.AreEqual(0,Items[3].Quality);
         }
+
+        [Test()]
+        public void ConjuredSulfurasTest()
+        {
+            IList<Item> Items = new List<Item>
+            {
+                new Item {Name = "Conjured Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 10},
+                new Item {Name = "Conjured Sulfuras, Hand of Ragnaros", SellIn = -10, Quality = 10}
+            };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(10, Items[0].Quality);
+            Assert.AreEqual(10, Items[1].Quality);
+        }
+
+        [Test()]
+        public void ConjuredTest()
+        {
+            IList<Item> Items = new List<Item>
+            {
+                new Item {Name = "Conjured foo", SellIn = 10, Quality = 10},
+                new Item {Name = "Conjured foo", SellIn = -10, Quality = 10}
+            };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(8,Items[0].Quality);
+            Assert.AreEqual(6,Items[1].Quality);
+        }
+
+        [Test()]
+        public void ConjuredIncreasing()
+        {
+            IList<Item> Items = new List<Item>
+            {
+                new Item {Name = "Conjured Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 10},
+                new Item {Name = "Conjured Aged Brie", SellIn = 10, Quality = 10},
+            };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(16, Items[0].Quality);
+            Assert.AreEqual(12, Items[1].Quality);
+        }
     }
 }
