@@ -10,11 +10,21 @@ namespace GildedRose
     {
         public static ItemManager Factory(Item item)
         {
-            return new ItemManager {Item = item};
+            ItemManager ret;
+            switch (item.Name)
+            {
+                case "Sulfuras, Hand of Ragnaros":
+                    ret = new Sulfuras {Item = item};
+                    break;
+                default:
+                    ret = new ItemManager {Item = item};
+                    break;
+            }
+            return ret;
         }
         public Item Item { get; set; }
 
-        public void Update()
+        public virtual void Update()
         {
             if (Item.Name != "Aged Brie" && Item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
