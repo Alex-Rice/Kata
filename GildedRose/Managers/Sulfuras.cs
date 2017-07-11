@@ -6,7 +6,7 @@ namespace GildedRose.Managers
     {
         public Sulfuras()
         {
-            bounded = false;
+            Bounded = false;
         }
 
         protected override void Update()

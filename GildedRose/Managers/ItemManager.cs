@@ -5,7 +5,19 @@
         public static ItemManager Factory(Item item)
         {
             ItemManager ret;
-            switch (item.Name)
+            bool conjured;
+            string baseName;
+            if (item.Name.StartsWith("Conjured "))
+            {
+                conjured = true;
+                baseName = item.Name.Substring("Conjured ".Length);
+            }
+            else
+            {
+                conjured = false;
+                baseName = item.Name;
+            }
+            switch (baseName)
             {
                 case "Sulfuras, Hand of Ragnaros":
                     ret = new Sulfuras {Item = item};
@@ -20,11 +32,18 @@
                     ret = new ItemManager {Item = item};
                     break;
             }
-            return ret;
+            if (conjured)
+            {
+                return new ConjuredItem(ret);
+            }
+            else
+            {
+                return ret;
+            }
         }
 
         public Item Item { get; set; }
-        protected bool bounded = true;
+        public bool Bounded { get; set; } = true;
 
         protected virtual void Update()
         {
@@ -42,7 +61,7 @@
 
         private void CheckBounds()
         {
-            if (bounded)
+            if (Bounded)
             {
                 if (Item.Quality < 0)
                 {
