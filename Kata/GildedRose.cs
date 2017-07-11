@@ -5,6 +5,7 @@ namespace GildedRose
     class GildedRose
     {
         IList<Item> Items;
+
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
@@ -85,16 +86,5 @@ namespace GildedRose
                 }
             }
         }
-
     }
-
-    public class Item
-    {
-        public string Name { get; set; }
-
-        public int SellIn { get; set; }
-
-        public int Quality { get; set; }
-    }
-
 }
